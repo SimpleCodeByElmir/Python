@@ -9,6 +9,8 @@ headers = {"User-Agent":
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"}
 
 
+# Download images
+
 def download(url):
     resp = requests.get(url, stream=True)  # "stream" coz pages can have a big size and we don't need to download them
     r = open("/home/elmir/python_projects/parsing/artifacts/images/" + url.split("/")[-1], "wb")  # "wb" - write bytes;
@@ -16,7 +18,7 @@ def download(url):
         r.write(value)
     r.close()
     
-    
+
 def get_url():
     for i in range(1, 7):
 
