@@ -32,6 +32,3 @@ print(array)
 #
 #    #sorted_array = start + mid + end
 #    #return sorted_array
-
-#array = [9, -8, 7, -6, 5, 4, 3, 2, -1, 0]
-#quick_sort(array)
