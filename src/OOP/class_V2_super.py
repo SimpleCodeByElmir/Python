@@ -8,12 +8,12 @@ class V2(Verification):
         self.__save()
         self.age = age
 
-    def __save(self):  # some additional functions to Parent save() method
+    def __save(self):  # some additional functionality in Parents save() method
         with open('users') as f:
             for i in f:  # i = 1 row
                 if i == f"{self.login, self.password}"+"\n":
                     raise ValueError("User already exists")
-        super().save()  # if user don't exist, write through calling Parent method save()
+        super().save()  # if user don't exist, write through Parents save() method
 
     def show(self):
         return self.login, self.password
