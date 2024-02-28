@@ -18,7 +18,6 @@ words = ['hello', 'everyone']
 print(smash(words))
 
 
-
 # More "gentle" solution from another User on the codewars.com
 
 #def smash(words):
