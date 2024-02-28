@@ -8,11 +8,10 @@
 
 
 def smash(words):
-    str = ""
+    new_str = ""
     for i in words:
-        str += i + ' '
-    str = str[0:-1]
-    return str
+        new_str += i + ' '
+    return new_str[0:-1]
 
 words = ['hello', 'everyone']
 print(smash(words))

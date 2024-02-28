@@ -8,10 +8,10 @@
 
 
 def repeat_str(repeat, string):
-    str = ""
+    new_str = ""
     for i in range(0, repeat):
-        str += string
-    return str
+        new_str += string
+    return new_str
     
     
 string = "Hi"
