@@ -6,7 +6,6 @@
 #   5, "Hello" -> "HelloHelloHelloHelloHello"
 
 
-
 def repeat_str(repeat, string):
     new_str = ""
     for i in range(0, repeat):
