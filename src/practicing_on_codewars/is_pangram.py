@@ -8,20 +8,36 @@
 # Return True if it is, False if not. Ignore numbers and punctuation.
 
 
-def is_pangram(s):
+# first way
+
+def is_pangram_1(s):
+    res = False
+    found_chars = []
+    for i in s:
+        if (i >= 'A' and i <= 'Z') and (chr(ord(i) + 32) not in found_chars):
+            found_chars.append(i)
+        elif (i >= 'a' and i <= 'z') and (chr(ord(i) - 32) not in found_chars):
+            found_chars.append(i)
+    if len(found_chars) >= 26:  # There are 26 unique letters in the English alphabet.
+        res = True
+    return res
+
+
+# second way
+
+def is_pangram_2(s):
     res = False
     found_chars = []
     for i in s:
         if i not in found_chars and i in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz":
             found_chars.append(i)
-    
     if len(set("".join(found_chars).lower())) >= 26:
-        print(set(found_chars))
         res = True
     return res
 
 
-string = 'ABCDEFGHIJKLMNOPQRSTUVWXyZz'  # True
+string = 'AbCDeFGhIJkLMnOPqRsTUVWXyZz'  # True
 #string = 'AbCdEfGHIJKLMNOPQrSTuVWXYyyy'  # False
 
-print(is_pangram(string))
+print(is_pangram_1(string))
+print(is_pangram_2(string))
