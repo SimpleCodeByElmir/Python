@@ -36,8 +36,21 @@ def is_pangram_2(s):
     return res
 
 
-string = 'AbCDeFGhIJkLMnOPqRsTUVWXyZz'  # True
+string = 'AbCDeFGhIJkLMnOPqRTUVWXyZz'  # True
 #string = 'AbCdEfGHIJKLMNOPQrSTuVWXYyyy'  # False
 
 print(is_pangram_1(string))
 print(is_pangram_2(string))
+
+
+
+# More "gentle" solution from another User on the codewars.com
+
+#import string
+
+#def is_pangram(s):
+#    s = s.lower()
+#    for char in 'abcdefghijklmnopqrstuvwxyz':
+#        if char not in s:
+#            return False
+#    return True
