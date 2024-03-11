@@ -1,2 +1,2 @@
 # Python3-Programming
-This repository contains My Python3-programming scripts.
+This repository contains my projects on Python3.
