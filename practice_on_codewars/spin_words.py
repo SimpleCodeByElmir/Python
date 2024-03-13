@@ -14,9 +14,16 @@
 
 def spin_words(string):
     new_str = ""
+    special_chars = ",.!?"
+    #special_chars = "@_!#$%^&*()<>?}{~:]\"\'"
     for word in string.split():
         if len(word) >= 5:
             word = word[::-1]
+            for i in range(0, len(word)):
+                if word[i] in special_chars:
+                    #print(word[i])
+                    word.replace('!', 'X')
+                    #word.replace(word[i], '')
         new_str += word + " "
     return new_str
 
