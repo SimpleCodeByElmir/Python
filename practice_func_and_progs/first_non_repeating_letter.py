@@ -20,24 +20,16 @@ def first_non_repeating_letter(s):
     length = len(s)
     ret = ""
     for i in range(0, length-1):
-        print(s[0:i+1])
-        print(s[i+1::-1][0])
-        break
-        #test_str = s[0:i] + s[i:-1]
-        #print(test_str)
-        #if not s[i] in test_str:
-         #   print(test_str)
-          #  ret = s[i]
-           # break
+        counter = 0
+        for k in range(0, length-1):
+            if s[i] == s[k] and i == k:
+                continue
+            if s[i] == s[k]:
+                counter += 1 
+        if counter == 0:
+            ret = s[i]
+            break
     return ret
-        #for k in range(0, length-1):
-        #    if not s[k] in s:
-        #        if k == i:
-        #            continue
-        #        else:
-        #            ret = s[k]
-        #            return ret
-    #return ret
 
 s = "stress"
 print(first_non_repeating_letter(s))
