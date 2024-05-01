@@ -16,24 +16,30 @@
 
 
 def first_non_repeating_letter(s):
-    #copy = s
+    special_chars = "][@_!#$%^&*()<>?/\|}{~:;,."
+    numbers = "0123456789"
     length = len(s)
     ret = ""
-    for i in range(0, length-1):
+    for i in range(0, length):
         counter = 0
-        for k in range(0, length-1):
+        for k in range(0, length):
             if s[i] == s[k] and i == k:
+                #print(s[i], s[k])
                 continue
-            if s[i] == s[k]:
-                counter += 1 
+            if (s[i] == s[k] or chr(ord(s[i])+32) == s[k] or chr(ord(s[i])-32) == s[k]) and s[k].isalpha() == True:
+                counter += 1
+            elif (s[i] in special_chars and s[i] == s[k]):
+                counter += 1
+            elif (s[i] in numbers and s[k] in numbers and s[i] == s[k]):
+                print(s[i], s[k])
+                counter += 1        
         if counter == 0:
             ret = s[i]
             break
     return ret
 
-s = "stress"
+#s = "XzFJCz8w3b"
+#s = "f4;;jyEdgWDrxTnUi9IMCbuk5D6tXk1;p1NroW:Kp;BDYhr8IhGI BsFMP"
+s = "14188T"
 print(first_non_repeating_letter(s))
-#if not s[2] in s:
-#    print("not")
-#else:
-#    print("yes")
+
